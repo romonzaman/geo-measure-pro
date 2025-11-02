@@ -73,6 +73,30 @@ When you want to forcefully reload, for example to reset the state of your app, 
 - **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
 - **iOS**: Press <kbd>R</kbd> in iOS Simulator.
 
+## Building APK
+
+To build an APK file for Android distribution:
+
+### Debug APK
+```sh
+npm run build:apk:debug
+```
+This will create a debug APK at: `android/app/build/outputs/apk/debug/app-debug.apk`
+
+### Release APK
+```sh
+npm run build:apk
+```
+This will create a release APK at: `android/app/build/outputs/apk/release/app-release.apk`
+
+**Note**: For production releases, you should create your own keystore file. See [React Native documentation](https://reactnative.dev/docs/signed-apk-android) for more information.
+
+Alternatively, you can use Gradle directly:
+```sh
+cd android
+./gradlew assembleRelease
+```
+
 ## Congratulations! :tada:
 
 You've successfully run and modified your React Native App. :partying_face:
